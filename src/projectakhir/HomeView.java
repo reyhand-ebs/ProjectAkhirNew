@@ -67,8 +67,12 @@ public class HomeView extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(255, 153, 51));
         jPanel1.setPreferredSize(new java.awt.Dimension(700, 500));
 
+        jPanel2.setBackground(new java.awt.Color(255, 204, 102));
+
+        lbljudul.setBackground(new java.awt.Color(211, 99, 55));
         lbljudul.setFont(new java.awt.Font("The Delicate DEMO", 1, 25)); // NOI18N
         lbljudul.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbljudul.setText("HOME");
@@ -178,7 +182,7 @@ public class HomeView extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnlpemesanan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnlhome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pnllogout, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
+            .addComponent(pnllogout, javax.swing.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -192,6 +196,8 @@ public class HomeView extends javax.swing.JFrame {
                 .addComponent(pnllogout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
+
+        jPanel7.setBackground(new java.awt.Color(255, 204, 102));
 
         lblwelcome.setFont(new java.awt.Font("The Delicate DEMO", 0, 20)); // NOI18N
         lblwelcome.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -215,6 +221,8 @@ public class HomeView extends javax.swing.JFrame {
         );
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+
+        jPanel8.setBackground(new java.awt.Color(255, 204, 102));
 
         jLabel1.setFont(new java.awt.Font("Remachine Script Personal Use", 0, 60)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
