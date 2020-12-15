@@ -51,7 +51,10 @@ public class Pemesanan1 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(255, 153, 51));
         jPanel1.setPreferredSize(new java.awt.Dimension(700, 500));
+
+        jPanel2.setBackground(new java.awt.Color(255, 204, 102));
 
         lbljudul.setFont(new java.awt.Font("The Delicate DEMO", 1, 25)); // NOI18N
         lbljudul.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -177,6 +180,9 @@ public class Pemesanan1 extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        jPanel7.setBackground(new java.awt.Color(255, 204, 102));
+
+        lblwelcome.setBackground(new java.awt.Color(255, 204, 102));
         lblwelcome.setFont(new java.awt.Font("The Delicate DEMO", 0, 20)); // NOI18N
         lblwelcome.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         lblwelcome.setText("WELCOME");
@@ -199,6 +205,8 @@ public class Pemesanan1 extends javax.swing.JFrame {
         );
 
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+
+        jPanel8.setBackground(new java.awt.Color(255, 204, 102));
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
