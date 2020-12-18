@@ -11,8 +11,8 @@ package projectakhir;
  */
 public class run {
     public static void main(String[] args){
-        LoginView login = new LoginView();
-        login.setLocationRelativeTo(null);
-        login.setVisible(true);
+        LoginView LV = new LoginView();
+        LV.setLocationRelativeTo(null);
+        LV.setVisible(true);
     }
 }
