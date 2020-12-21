@@ -60,9 +60,14 @@ public class Pemesanan2 extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         jPanel5 = new javax.swing.JPanel();
         nextButton = new javax.swing.JButton();
-        jmltiketText = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
+        jSeparator4 = new javax.swing.JSeparator();
+        jRadioButton1 = new javax.swing.JRadioButton();
         jLabel4 = new javax.swing.JLabel();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jLabel6 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
 
         jLabel9.setText("jLabel9");
@@ -81,7 +86,7 @@ public class Pemesanan2 extends javax.swing.JFrame {
         lbljudul.setBackground(new java.awt.Color(255, 255, 255));
         lbljudul.setFont(new java.awt.Font("Candy Round BTN Cond Lt", 1, 35)); // NOI18N
         lbljudul.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbljudul.setText("HOME");
+        lbljudul.setText("PEMESANAN");
         lbljudul.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -168,7 +173,7 @@ public class Pemesanan2 extends javax.swing.JFrame {
             pnlpemesananLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlpemesananLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 152, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -283,7 +288,7 @@ public class Pemesanan2 extends javax.swing.JFrame {
         jPanel8.setBackground(new java.awt.Color(153, 204, 255));
         jPanel8.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 204, 255), 3, true));
 
-        jLabel1.setFont(new java.awt.Font("Remachine Script Personal Use", 0, 60)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Candy Round BTN Cond", 0, 50)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Hayand Airport");
 
@@ -300,61 +305,110 @@ public class Pemesanan2 extends javax.swing.JFrame {
             }
         });
 
-        jmltiketText.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jmltiketText.addActionListener(new java.awt.event.ActionListener() {
+        jSeparator4.setBackground(new java.awt.Color(153, 204, 255));
+        jSeparator4.setForeground(new java.awt.Color(255, 255, 255));
+        jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
+
+        jRadioButton1.setBackground(new java.awt.Color(153, 204, 255));
+        jRadioButton1.setFont(new java.awt.Font("Candy Round BTN Cond Lt", 0, 18)); // NOI18N
+        jRadioButton1.setText("Pagi (07.30 WIB)");
+        jRadioButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jRadioButton1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jLabel4.setFont(new java.awt.Font("Candy Round BTN", 3, 18)); // NOI18N
+        jLabel4.setText("WAKTU KEBERANGKATAN");
+
+        jRadioButton2.setBackground(new java.awt.Color(153, 204, 255));
+        jRadioButton2.setFont(new java.awt.Font("Candy Round BTN Cond Lt", 0, 18)); // NOI18N
+        jRadioButton2.setText("SIANG (13.25 WIB)");
+        jRadioButton2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jRadioButton2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jRadioButton3.setBackground(new java.awt.Color(153, 204, 255));
+        jRadioButton3.setFont(new java.awt.Font("Candy Round BTN Cond Lt", 0, 18)); // NOI18N
+        jRadioButton3.setText("MALAM (09.40 WIB)");
+        jRadioButton3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jRadioButton3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jLabel6.setFont(new java.awt.Font("Candy Round BTN", 3, 18)); // NOI18N
+        jLabel6.setText("JUMLAH TIKET");
+
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICON/pointleft.png"))); // NOI18N
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jmltiketTextActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-
-        jLabel6.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Berapa tiket yang ingin Anda pesan?");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(34, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel5Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(4, 4, 4))
+                        .addComponent(jRadioButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jRadioButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jRadioButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addComponent(jmltiketText, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(208, 208, 208))
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(69, 69, 69))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addComponent(nextButton, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(103, 103, 103))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addComponent(nextButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator4, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jmltiketText, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(nextButton))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel4)
+                        .addGap(33, 33, 33)
+                        .addComponent(jRadioButton1)
+                        .addGap(43, 43, 43)
+                        .addComponent(jRadioButton2)
+                        .addGap(43, 43, 43)
+                        .addComponent(jRadioButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(81, 81, 81)
+                        .addComponent(jLabel6)
+                        .addGap(27, 27, 27)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(nextButton)))
+                .addContainerGap())
         );
-
-        jLabel4.setFont(new java.awt.Font("Monotype Corsiva", 0, 36)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("Jumlah Tiket");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 446, Short.MAX_VALUE)
             .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jSeparator3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jSeparator3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
@@ -362,12 +416,9 @@ public class Pemesanan2 extends javax.swing.JFrame {
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jSeparator2.setBackground(new java.awt.Color(51, 51, 255));
@@ -410,7 +461,7 @@ public class Pemesanan2 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 721, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -463,17 +514,19 @@ public class Pemesanan2 extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jToggleButton3ActionPerformed
 
-    private void jmltiketTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmltiketTextActionPerformed
-        String jumlahtiket = jmltiketText.getText();
-        int jmltiket = Integer.parseInt(jumlahtiket);
-    }//GEN-LAST:event_jmltiketTextActionPerformed
-
     private void nextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextButtonActionPerformed
         Pemesanan3 P3 = new Pemesanan3();
         P3.setLocationRelativeTo(null);
         P3.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_nextButtonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        Pemesanan1 P1 = new Pemesanan1();
+        this.setVisible(false);
+        P1.setVisible(true);
+        P1.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -521,6 +574,7 @@ public class Pemesanan2 extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -534,13 +588,17 @@ public class Pemesanan2 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JTextField jmltiketText;
     private javax.swing.JLabel lbljudul;
     private javax.swing.JLabel lblwelcome;
     private javax.swing.JButton nextButton;

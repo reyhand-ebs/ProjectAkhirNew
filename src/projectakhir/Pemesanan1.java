@@ -24,6 +24,7 @@ public class Pemesanan1 extends javax.swing.JFrame {
         initComponents();
         Pemesanan1 home = new Pemesanan1();
         lblwelcome.setText("Welcome, " +_username);
+        lbljudul.setText("Pemesanan");
     }
 
     /**
@@ -58,15 +59,14 @@ public class Pemesanan1 extends javax.swing.JFrame {
         jPanel8 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
-        jPanel5 = new javax.swing.JPanel();
-        radbtngaruda = new javax.swing.JRadioButton();
-        radbtnlion = new javax.swing.JRadioButton();
-        radbtnsriwijaya = new javax.swing.JRadioButton();
-        radbtnbatik = new javax.swing.JRadioButton();
-        radbtnairasia = new javax.swing.JRadioButton();
-        lblhargamaskapai = new javax.swing.JLabel();
-        nextButton = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        fclassbtn = new javax.swing.JRadioButton();
+        eclassbtn = new javax.swing.JRadioButton();
+        jButton1 = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
 
         jLabel9.setText("jLabel9");
@@ -85,7 +85,7 @@ public class Pemesanan1 extends javax.swing.JFrame {
         lbljudul.setBackground(new java.awt.Color(255, 255, 255));
         lbljudul.setFont(new java.awt.Font("Candy Round BTN Cond Lt", 1, 35)); // NOI18N
         lbljudul.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbljudul.setText("HOME");
+        lbljudul.setText("PEMESANAN");
         lbljudul.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -172,7 +172,7 @@ public class Pemesanan1 extends javax.swing.JFrame {
             pnlpemesananLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlpemesananLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 152, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -270,7 +270,7 @@ public class Pemesanan1 extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblwelcome, javax.swing.GroupLayout.DEFAULT_SIZE, 438, Short.MAX_VALUE)
+                .addComponent(lblwelcome, javax.swing.GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
@@ -287,7 +287,7 @@ public class Pemesanan1 extends javax.swing.JFrame {
         jPanel8.setBackground(new java.awt.Color(153, 204, 255));
         jPanel8.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(153, 204, 255), 3, true));
 
-        jLabel1.setFont(new java.awt.Font("Remachine Script Personal Use", 0, 60)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Candy Round BTN Cond", 0, 50)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Hayand Airport");
 
@@ -295,120 +295,97 @@ public class Pemesanan1 extends javax.swing.JFrame {
         jSeparator3.setForeground(new java.awt.Color(255, 255, 255));
         jSeparator3.setPreferredSize(new java.awt.Dimension(2, 2));
 
-        jPanel5.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel4.setBackground(new java.awt.Color(153, 204, 255));
 
-        radbtngaruda.setBackground(new java.awt.Color(153, 204, 255));
-        radbtngaruda.setFont(new java.awt.Font("Monotype Corsiva", 0, 18)); // NOI18N
-        radbtngaruda.setText("Garuda Indonesia");
-        radbtngaruda.setPreferredSize(new java.awt.Dimension(105, 20));
-        radbtngaruda.addActionListener(new java.awt.event.ActionListener() {
+        jComboBox1.setFont(new java.awt.Font("Candy Round BTN", 0, 18)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bali", "Makasar", "Kalimantan", "Malang", "Sumatera" }));
+
+        jLabel6.setFont(new java.awt.Font("Candy Round BTN", 1, 18)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel6.setText("DARI:");
+
+        jLabel4.setFont(new java.awt.Font("Candy Round BTN", 1, 18)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel4.setText("TUJUAN:");
+
+        jLabel7.setFont(new java.awt.Font("Candy Round BTN", 0, 18)); // NOI18N
+        jLabel7.setText("DKI Jakarta");
+
+        fclassbtn.setBackground(new java.awt.Color(153, 204, 255));
+        fclassbtn.setFont(new java.awt.Font("Marquisette BTN Light", 1, 18)); // NOI18N
+        fclassbtn.setText("First Class");
+        fclassbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radbtngarudaActionPerformed(evt);
+                fclassbtnActionPerformed(evt);
             }
         });
 
-        radbtnlion.setBackground(new java.awt.Color(153, 204, 255));
-        radbtnlion.setFont(new java.awt.Font("Monotype Corsiva", 0, 18)); // NOI18N
-        radbtnlion.setText("Lion Air");
-        radbtnlion.addActionListener(new java.awt.event.ActionListener() {
+        eclassbtn.setBackground(new java.awt.Color(153, 204, 255));
+        eclassbtn.setFont(new java.awt.Font("Marquisette BTN Light", 1, 18)); // NOI18N
+        eclassbtn.setText("Economy Class");
+
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICON/pointright.png"))); // NOI18N
+        jButton1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radbtnlionActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
 
-        radbtnsriwijaya.setBackground(new java.awt.Color(153, 204, 255));
-        radbtnsriwijaya.setFont(new java.awt.Font("Monotype Corsiva", 0, 18)); // NOI18N
-        radbtnsriwijaya.setText("Sriwijaya Air");
-        radbtnsriwijaya.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radbtnsriwijayaActionPerformed(evt);
-            }
-        });
-
-        radbtnbatik.setBackground(new java.awt.Color(153, 204, 255));
-        radbtnbatik.setFont(new java.awt.Font("Monotype Corsiva", 0, 18)); // NOI18N
-        radbtnbatik.setText("Batik Air");
-        radbtnbatik.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radbtnbatikActionPerformed(evt);
-            }
-        });
-
-        radbtnairasia.setBackground(new java.awt.Color(153, 204, 255));
-        radbtnairasia.setFont(new java.awt.Font("Monotype Corsiva", 0, 18)); // NOI18N
-        radbtnairasia.setText("AirAsia Indonesia");
-        radbtnairasia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                radbtnairasiaActionPerformed(evt);
-            }
-        });
-
-        lblhargamaskapai.setFont(new java.awt.Font("Candy Round BTN Lt", 1, 24)); // NOI18N
-        lblhargamaskapai.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-        nextButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICON/pointright.png"))); // NOI18N
-        nextButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                nextButtonActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(radbtnsriwijaya)
-                            .addComponent(radbtnlion)
-                            .addComponent(radbtnairasia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(radbtnbatik)
-                            .addComponent(radbtngaruda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                        .addComponent(lblhargamaskapai, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(nextButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(fclassbtn)
+                .addGap(61, 61, 61)
+                .addComponent(eclassbtn)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(120, 120, 120))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(lblhargamaskapai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(radbtngaruda, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(radbtnlion, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(radbtnairasia, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(radbtnbatik, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21)
-                        .addComponent(radbtnsriwijaya, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(nextButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fclassbtn)
+                    .addComponent(eclassbtn))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-
-        jLabel7.setFont(new java.awt.Font("Candy Round BTN Cond", 0, 30)); // NOI18N
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Maskapai :");
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel8Layout.createSequentialGroup()
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 446, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jSeparator3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jSeparator3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -416,10 +393,8 @@ public class Pemesanan1 extends javax.swing.JFrame {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 6, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(7, 7, 7)
-                .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -463,7 +438,7 @@ public class Pemesanan1 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 712, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -472,56 +447,6 @@ public class Pemesanan1 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void radbtngarudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radbtngarudaActionPerformed
-        if(radbtngaruda.isSelected()){
-            radbtnlion.setSelected(false);
-            radbtnsriwijaya.setSelected(false);
-            radbtnbatik.setSelected(false);
-            radbtnairasia.setSelected(false);
-            lblhargamaskapai.setText("Rp. 700.000");
-        }
-    }//GEN-LAST:event_radbtngarudaActionPerformed
-
-    private void radbtnlionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radbtnlionActionPerformed
-        if(radbtnlion.isSelected()){
-            radbtngaruda.setSelected(false);
-            radbtnsriwijaya.setSelected(false);
-            radbtnbatik.setSelected(false);
-            radbtnairasia.setSelected(false);
-            lblhargamaskapai.setText("Rp. 670.000");
-        }
-    }//GEN-LAST:event_radbtnlionActionPerformed
-
-    private void radbtnsriwijayaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radbtnsriwijayaActionPerformed
-        if(radbtnsriwijaya.isSelected()){
-            radbtngaruda.setSelected(false);
-            radbtnlion.setSelected(false);
-            radbtnbatik.setSelected(false);
-            radbtnairasia.setSelected(false);
-            lblhargamaskapai.setText("Rp. 650.000");
-        }
-    }//GEN-LAST:event_radbtnsriwijayaActionPerformed
-
-    private void radbtnbatikActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radbtnbatikActionPerformed
-        if(radbtnbatik.isSelected()){
-            radbtngaruda.setSelected(false);
-            radbtnlion.setSelected(false);
-            radbtnsriwijaya.setSelected(false);
-            radbtnairasia.setSelected(false);
-            lblhargamaskapai.setText("Rp. 600.000");
-        }
-    }//GEN-LAST:event_radbtnbatikActionPerformed
-
-    private void radbtnairasiaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radbtnairasiaActionPerformed
-        if(radbtnairasia.isSelected()){
-            radbtngaruda.setSelected(false);
-            radbtnlion.setSelected(false);
-            radbtnsriwijaya.setSelected(false);
-            radbtnbatik.setSelected(false);
-            lblhargamaskapai.setText("Rp. 580.000");
-        }
-    }//GEN-LAST:event_radbtnairasiaActionPerformed
 
     private void pnllogoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pnllogoutMouseClicked
     }//GEN-LAST:event_pnllogoutMouseClicked
@@ -566,12 +491,16 @@ public class Pemesanan1 extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jToggleButton3ActionPerformed
 
-    private void nextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextButtonActionPerformed
+    private void fclassbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fclassbtnActionPerformed
+
+    }//GEN-LAST:event_fclassbtnActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Pemesanan2 P2 = new Pemesanan2();
-        P2.setLocationRelativeTo(null);
-        P2.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_nextButtonActionPerformed
+        P2.setVisible(true);
+        P2.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -615,16 +544,22 @@ public class Pemesanan1 extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.JRadioButton eclassbtn;
+    private javax.swing.JRadioButton fclassbtn;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JSeparator jSeparator1;
@@ -633,17 +568,10 @@ public class Pemesanan1 extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JLabel lblhargamaskapai;
     private javax.swing.JLabel lbljudul;
     private javax.swing.JLabel lblwelcome;
-    private javax.swing.JButton nextButton;
     private javax.swing.JPanel pnlhome;
     private javax.swing.JPanel pnllogout;
     private javax.swing.JPanel pnlpemesanan;
-    private javax.swing.JRadioButton radbtnairasia;
-    private javax.swing.JRadioButton radbtnbatik;
-    private javax.swing.JRadioButton radbtngaruda;
-    private javax.swing.JRadioButton radbtnlion;
-    private javax.swing.JRadioButton radbtnsriwijaya;
     // End of variables declaration//GEN-END:variables
 }

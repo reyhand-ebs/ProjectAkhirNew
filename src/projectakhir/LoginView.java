@@ -219,6 +219,7 @@ public class LoginView extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "Invalid!", "Message!", JOptionPane.ERROR_MESSAGE);
             txtusername.setText("");
+            txtpassword.setText("");
         }
     }//GEN-LAST:event_btnloginActionPerformed
 
