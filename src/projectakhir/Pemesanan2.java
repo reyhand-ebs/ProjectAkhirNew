@@ -23,7 +23,7 @@ public class Pemesanan2 extends javax.swing.JFrame {
     public Pemesanan2(String _username) {
         initComponents();
         Pemesanan2 home = new Pemesanan2();
-        lblwelcome.setText("Welcome, " +_username);
+        lblwelcome.setText("Welcome, " + _username);
     }
 
     /**
