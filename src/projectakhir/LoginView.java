@@ -75,7 +75,7 @@ public class LoginView extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(153, 204, 255));
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 30)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Candy Round BTN", 1, 30)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Username :");
 
@@ -88,7 +88,7 @@ public class LoginView extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 30)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Candy Round BTN", 1, 30)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Password :");
 
