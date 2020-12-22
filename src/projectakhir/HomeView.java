@@ -23,7 +23,7 @@ public class HomeView extends javax.swing.JFrame {
     public HomeView(String _username) {
         initComponents();
         HomeView home = new HomeView();
-        lblwelcome.setText("Welcome, " +_username);
+        lblwelcome.setText("Welcome, " + _username);
     }
 
     /**

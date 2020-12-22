@@ -177,7 +177,7 @@ public class Pemesanan1 extends javax.swing.JFrame {
             pnlpemesananLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlpemesananLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -275,7 +275,7 @@ public class Pemesanan1 extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblwelcome, javax.swing.GroupLayout.DEFAULT_SIZE, 445, Short.MAX_VALUE)
+                .addComponent(lblwelcome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
@@ -343,26 +343,51 @@ public class Pemesanan1 extends javax.swing.JFrame {
         balibtn.setFont(new java.awt.Font("Candy Round BTN", 0, 15)); // NOI18N
         balibtn.setText("Bali");
         balibtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        balibtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                balibtnActionPerformed(evt);
+            }
+        });
 
         makassarbtn.setBackground(new java.awt.Color(153, 204, 255));
         makassarbtn.setFont(new java.awt.Font("Candy Round BTN", 0, 15)); // NOI18N
         makassarbtn.setText("Makassar");
         makassarbtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        makassarbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                makassarbtnActionPerformed(evt);
+            }
+        });
 
         kalimantanbtn.setBackground(new java.awt.Color(153, 204, 255));
         kalimantanbtn.setFont(new java.awt.Font("Candy Round BTN", 0, 15)); // NOI18N
         kalimantanbtn.setText("Kalimantan");
         kalimantanbtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        kalimantanbtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                kalimantanbtnActionPerformed(evt);
+            }
+        });
 
         surabayabtn.setBackground(new java.awt.Color(153, 204, 255));
         surabayabtn.setFont(new java.awt.Font("Candy Round BTN", 0, 15)); // NOI18N
         surabayabtn.setText("Surabaya");
         surabayabtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        surabayabtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                surabayabtnActionPerformed(evt);
+            }
+        });
 
         sumaterabtn.setBackground(new java.awt.Color(153, 204, 255));
         sumaterabtn.setFont(new java.awt.Font("Candy Round BTN", 0, 15)); // NOI18N
         sumaterabtn.setText("Sumatera");
         sumaterabtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        sumaterabtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sumaterabtnActionPerformed(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Marquisette BTN Light", 1, 18)); // NOI18N
         jLabel8.setText("CLASS:");
@@ -380,7 +405,7 @@ public class Pemesanan1 extends javax.swing.JFrame {
                     .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(202, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -494,7 +519,9 @@ public class Pemesanan1 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 802, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -565,6 +592,51 @@ public class Pemesanan1 extends javax.swing.JFrame {
         fclassbtn.setSelected(false);
         }
     }//GEN-LAST:event_eclassbtnActionPerformed
+
+    private void surabayabtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_surabayabtnActionPerformed
+        if(surabayabtn.isSelected()){
+            kalimantanbtn.setSelected(false);
+            makassarbtn.setSelected(false);
+            balibtn.setSelected(false);
+            sumaterabtn.setSelected(false);
+        }
+    }//GEN-LAST:event_surabayabtnActionPerformed
+
+    private void makassarbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_makassarbtnActionPerformed
+        if(makassarbtn.isSelected()){
+            kalimantanbtn.setSelected(false);
+            surabayabtn.setSelected(false);
+            balibtn.setSelected(false);
+            sumaterabtn.setSelected(false);
+        }
+    }//GEN-LAST:event_makassarbtnActionPerformed
+
+    private void balibtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_balibtnActionPerformed
+        if(balibtn.isSelected()){
+            kalimantanbtn.setSelected(false);
+            makassarbtn.setSelected(false);
+            surabayabtn.setSelected(false);
+            sumaterabtn.setSelected(false);
+        }
+    }//GEN-LAST:event_balibtnActionPerformed
+
+    private void kalimantanbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kalimantanbtnActionPerformed
+        if(kalimantanbtn.isSelected()){
+            surabayabtn.setSelected(false);
+            makassarbtn.setSelected(false);
+            balibtn.setSelected(false);
+            sumaterabtn.setSelected(false);
+        }
+    }//GEN-LAST:event_kalimantanbtnActionPerformed
+
+    private void sumaterabtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sumaterabtnActionPerformed
+        if(sumaterabtn.isSelected()){
+            kalimantanbtn.setSelected(false);
+            makassarbtn.setSelected(false);
+            balibtn.setSelected(false);
+            surabayabtn.setSelected(false);
+        }
+    }//GEN-LAST:event_sumaterabtnActionPerformed
 
     /**
      * @param args the command line arguments
