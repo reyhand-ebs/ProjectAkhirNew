@@ -10,6 +10,7 @@ package projectakhir;
  *
  * @author USER
  */
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 public class LoginView extends javax.swing.JFrame {
 
@@ -100,6 +101,11 @@ public class LoginView extends javax.swing.JFrame {
                 txtpasswordActionPerformed(evt);
             }
         });
+        txtpassword.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtpasswordKeyPressed(evt);
+            }
+        });
 
         btnlogin.setFont(new java.awt.Font("Times New Roman", 0, 20)); // NOI18N
         btnlogin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ICON/login.png"))); // NOI18N
@@ -107,6 +113,11 @@ public class LoginView extends javax.swing.JFrame {
         btnlogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnloginActionPerformed(evt);
+            }
+        });
+        btnlogin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                btnloginKeyPressed(evt);
             }
         });
 
@@ -123,7 +134,7 @@ public class LoginView extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap(118, Short.MAX_VALUE)
+                .addContainerGap(168, Short.MAX_VALUE)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -230,6 +241,33 @@ public class LoginView extends javax.swing.JFrame {
             this.setVisible(false);
         }
     }//GEN-LAST:event_btnexitActionPerformed
+
+    private void btnloginKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnloginKeyPressed
+
+    }//GEN-LAST:event_btnloginKeyPressed
+
+    private void txtpasswordKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtpasswordKeyPressed
+        if(evt.getKeyCode()== KeyEvent.VK_ENTER){
+            String _username = txtusername.getText();
+            String _password = new String(txtpassword.getPassword());
+        
+            if(username.equalsIgnoreCase(_username) && password.equals(_password)) {
+                HomeView home = new HomeView(_username);
+                home.setLocationRelativeTo(null);
+                home.setVisible(true);
+                this.setVisible(false);
+            }else if(username1.equalsIgnoreCase(_username) && password1.equals(_password)) {
+                HomeView home = new HomeView(_username);
+                home.setLocationRelativeTo(null);
+                home.setVisible(true);
+                this.setVisible(false);
+            } else {
+                JOptionPane.showMessageDialog(null, "Invalid!", "Message!", JOptionPane.ERROR_MESSAGE);
+                txtusername.setText("");
+                txtpassword.setText("");
+            }
+        }
+    }//GEN-LAST:event_txtpasswordKeyPressed
 
     /**
      * @param args the command line arguments

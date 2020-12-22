@@ -60,13 +60,18 @@ public class Pemesanan1 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jSeparator3 = new javax.swing.JSeparator();
         jPanel4 = new javax.swing.JPanel();
-        jComboBox1 = new javax.swing.JComboBox<>();
         jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         fclassbtn = new javax.swing.JRadioButton();
         eclassbtn = new javax.swing.JRadioButton();
         jButton1 = new javax.swing.JButton();
+        balibtn = new javax.swing.JRadioButton();
+        makassarbtn = new javax.swing.JRadioButton();
+        kalimantanbtn = new javax.swing.JRadioButton();
+        surabayabtn = new javax.swing.JRadioButton();
+        sumaterabtn = new javax.swing.JRadioButton();
+        jLabel8 = new javax.swing.JLabel();
         jSeparator2 = new javax.swing.JSeparator();
 
         jLabel9.setText("jLabel9");
@@ -172,7 +177,7 @@ public class Pemesanan1 extends javax.swing.JFrame {
             pnlpemesananLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlpemesananLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -270,7 +275,7 @@ public class Pemesanan1 extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(lblwelcome, javax.swing.GroupLayout.DEFAULT_SIZE, 426, Short.MAX_VALUE)
+                .addComponent(lblwelcome, javax.swing.GroupLayout.DEFAULT_SIZE, 445, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel7Layout.setVerticalGroup(
@@ -297,27 +302,19 @@ public class Pemesanan1 extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(153, 204, 255));
 
-        jComboBox1.setFont(new java.awt.Font("Candy Round BTN", 0, 18)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bali", "Makasar", "Kalimantan", "Malang", "Sumatera" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
-
-        jLabel6.setFont(new java.awt.Font("Candy Round BTN", 1, 18)); // NOI18N
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel6.setFont(new java.awt.Font("Marquisette BTN Light", 1, 18)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("DARI:");
 
-        jLabel4.setFont(new java.awt.Font("Candy Round BTN", 1, 18)); // NOI18N
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel4.setFont(new java.awt.Font("Marquisette BTN Light", 1, 18)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("TUJUAN:");
 
-        jLabel7.setFont(new java.awt.Font("Candy Round BTN", 0, 18)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Candy Round BTN", 0, 15)); // NOI18N
         jLabel7.setText("DKI Jakarta");
 
         fclassbtn.setBackground(new java.awt.Color(153, 204, 255));
-        fclassbtn.setFont(new java.awt.Font("Marquisette BTN Light", 1, 18)); // NOI18N
+        fclassbtn.setFont(new java.awt.Font("Candy Round BTN", 0, 15)); // NOI18N
         fclassbtn.setText("First Class");
         fclassbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -326,7 +323,7 @@ public class Pemesanan1 extends javax.swing.JFrame {
         });
 
         eclassbtn.setBackground(new java.awt.Color(153, 204, 255));
-        eclassbtn.setFont(new java.awt.Font("Marquisette BTN Light", 1, 18)); // NOI18N
+        eclassbtn.setFont(new java.awt.Font("Candy Round BTN", 0, 15)); // NOI18N
         eclassbtn.setText("Economy Class");
         eclassbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -342,42 +339,91 @@ public class Pemesanan1 extends javax.swing.JFrame {
             }
         });
 
+        balibtn.setBackground(new java.awt.Color(153, 204, 255));
+        balibtn.setFont(new java.awt.Font("Candy Round BTN", 0, 15)); // NOI18N
+        balibtn.setText("Bali");
+        balibtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        makassarbtn.setBackground(new java.awt.Color(153, 204, 255));
+        makassarbtn.setFont(new java.awt.Font("Candy Round BTN", 0, 15)); // NOI18N
+        makassarbtn.setText("Makassar");
+        makassarbtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        kalimantanbtn.setBackground(new java.awt.Color(153, 204, 255));
+        kalimantanbtn.setFont(new java.awt.Font("Candy Round BTN", 0, 15)); // NOI18N
+        kalimantanbtn.setText("Kalimantan");
+        kalimantanbtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        surabayabtn.setBackground(new java.awt.Color(153, 204, 255));
+        surabayabtn.setFont(new java.awt.Font("Candy Round BTN", 0, 15)); // NOI18N
+        surabayabtn.setText("Surabaya");
+        surabayabtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        sumaterabtn.setBackground(new java.awt.Color(153, 204, 255));
+        sumaterabtn.setFont(new java.awt.Font("Candy Round BTN", 0, 15)); // NOI18N
+        sumaterabtn.setText("Sumatera");
+        sumaterabtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        jLabel8.setFont(new java.awt.Font("Marquisette BTN Light", 1, 18)); // NOI18N
+        jLabel8.setText("CLASS:");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addComponent(fclassbtn)
-                .addGap(61, 61, 61)
-                .addComponent(eclassbtn)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(120, 120, 120))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(180, 180, 180)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(202, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(balibtn)
+                        .addGap(18, 18, 18)
+                        .addComponent(makassarbtn)
+                        .addGap(18, 18, 18)
+                        .addComponent(kalimantanbtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(surabayabtn))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addGap(110, 110, 110))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(fclassbtn)
+                                .addGap(57, 57, 57)
+                                .addComponent(eclassbtn)))))
+                .addGap(18, 18, 18)
+                .addComponent(sumaterabtn)
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
+                    .addComponent(balibtn)
+                    .addComponent(makassarbtn)
+                    .addComponent(kalimantanbtn)
+                    .addComponent(surabayabtn)
+                    .addComponent(sumaterabtn))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(fclassbtn)
                     .addComponent(eclassbtn))
@@ -448,7 +494,7 @@ public class Pemesanan1 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 730, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 750, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -520,10 +566,6 @@ public class Pemesanan1 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_eclassbtnActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -563,13 +605,13 @@ public class Pemesanan1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton balibtn;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.JRadioButton eclassbtn;
     private javax.swing.JRadioButton fclassbtn;
     private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -577,6 +619,7 @@ public class Pemesanan1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
@@ -590,10 +633,14 @@ public class Pemesanan1 extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JRadioButton kalimantanbtn;
     private javax.swing.JLabel lbljudul;
     private javax.swing.JLabel lblwelcome;
+    private javax.swing.JRadioButton makassarbtn;
     private javax.swing.JPanel pnlhome;
     private javax.swing.JPanel pnllogout;
     private javax.swing.JPanel pnlpemesanan;
+    private javax.swing.JRadioButton sumaterabtn;
+    private javax.swing.JRadioButton surabayabtn;
     // End of variables declaration//GEN-END:variables
 }

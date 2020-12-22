@@ -32,7 +32,6 @@ public class Result extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(700, 500));
 
         kGradientPanel1.setkEndColor(new java.awt.Color(0, 153, 255));
         kGradientPanel1.setkStartColor(new java.awt.Color(102, 204, 255));
@@ -46,9 +45,9 @@ public class Result extends javax.swing.JFrame {
         kGradientPanel1Layout.setHorizontalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addGap(270, 270, 270)
+                .addGap(301, 301, 301)
                 .addComponent(jLabel1)
-                .addContainerGap(283, Short.MAX_VALUE))
+                .addContainerGap(302, Short.MAX_VALUE))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
