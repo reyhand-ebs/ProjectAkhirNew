@@ -36,7 +36,7 @@ public class Result extends javax.swing.JFrame {
         kGradientPanel1.setkEndColor(new java.awt.Color(0, 153, 255));
         kGradientPanel1.setkStartColor(new java.awt.Color(102, 204, 255));
 
-        jLabel1.setFont(new java.awt.Font("Marquisette BTN", 0, 36)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Freehand521 BT", 0, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("BOOKINGAN");
 
@@ -44,17 +44,17 @@ public class Result extends javax.swing.JFrame {
         kGradientPanel1.setLayout(kGradientPanel1Layout);
         kGradientPanel1Layout.setHorizontalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                .addGap(301, 301, 301)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
+                .addContainerGap(289, Short.MAX_VALUE)
                 .addComponent(jLabel1)
-                .addContainerGap(302, Short.MAX_VALUE))
+                .addGap(285, 285, 285))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addContainerGap(449, Short.MAX_VALUE))
+                .addContainerGap(489, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

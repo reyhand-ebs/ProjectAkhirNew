@@ -514,6 +514,11 @@ public class Utama extends javax.swing.JFrame {
 
         jcboxtujuan.setFont(new java.awt.Font("Freehand575 BT", 0, 20)); // NOI18N
         jcboxtujuan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bali", "Makassar", "Kalimantan", "Surabaya", "Sumatera", " " }));
+        jcboxtujuan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcboxtujuanActionPerformed(evt);
+            }
+        });
 
         jSeparator3.setBackground(new java.awt.Color(153, 204, 255));
         jSeparator3.setForeground(new java.awt.Color(255, 255, 255));
@@ -568,7 +573,7 @@ public class Utama extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jpanpem1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jpanpem1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(fclassbtn)
                     .addComponent(eclassbtn))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
@@ -972,6 +977,7 @@ public class Utama extends javax.swing.JFrame {
 
     private void tiketTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tiketTextActionPerformed
         int jumlahtiket = Integer.parseInt(tiketText.getText());
+        
     }//GEN-LAST:event_tiketTextActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -989,7 +995,18 @@ public class Utama extends javax.swing.JFrame {
     }//GEN-LAST:event_nextButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-
+        String jcbox_tujuan = (String) jcboxtujuan.getSelectedItem();
+        String jcbox_maskapai = (String) jcboxmaskapai.getSelectedItem();
+        switch(jcbox_tujuan){
+            case "Bali":
+                if(fclassbtn.isSelected()){
+                    if(pagibtn.isSelected()){
+                        if(jcbox_maskapai == "AirAsia Indonesia"){
+                            
+                        }
+                    }
+                }
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -1058,6 +1075,10 @@ public class Utama extends javax.swing.JFrame {
             lbldismaskapai1.setText("Jika pemesanan tiket kelipatan ganjil");
         }
     }//GEN-LAST:event_radbtnairasiaActionPerformed
+
+    private void jcboxtujuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcboxtujuanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcboxtujuanActionPerformed
 
     /**
      * @param args the command line arguments
