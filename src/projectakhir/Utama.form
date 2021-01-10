@@ -867,13 +867,12 @@
                           <Font name="Freehand575 BT" size="20" style="0"/>
                         </Property>
                         <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                          <StringArray count="6">
+                          <StringArray count="5">
                             <StringItem index="0" value="Bali"/>
                             <StringItem index="1" value="Makassar"/>
                             <StringItem index="2" value="Kalimantan"/>
                             <StringItem index="3" value="Surabaya"/>
                             <StringItem index="4" value="Sumatera"/>
-                            <StringItem index="5" value=" "/>
                           </StringArray>
                         </Property>
                       </Properties>
@@ -1166,7 +1165,7 @@
                           </Group>
                           <Component id="jSeparator6" alignment="1" max="32767" attributes="0"/>
                           <Component id="jLabel13" alignment="1" max="32767" attributes="0"/>
-                          <Component id="lbljharga" alignment="0" max="32767" attributes="0"/>
+                          <Component id="lblharga" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace pref="192" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
@@ -1193,7 +1192,7 @@
                               <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                               <Component id="jButton3" min="-2" pref="30" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="lbljharga" min="-2" pref="45" max="-2" attributes="0"/>
+                              <Component id="lblharga" min="-2" pref="45" max="-2" attributes="0"/>
                               <EmptySpace pref="74" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="nextButton1" alignment="1" min="-2" pref="30" max="-2" attributes="0"/>
@@ -1224,7 +1223,7 @@
                         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
                       </Events>
                     </Component>
-                    <Component class="javax.swing.JLabel" name="lbljharga">
+                    <Component class="javax.swing.JLabel" name="lblharga">
                       <Properties>
                         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                           <Font name="Freehand575 BT" size="40" style="0"/>
