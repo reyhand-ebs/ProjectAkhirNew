@@ -207,7 +207,7 @@ public class Utama extends javax.swing.JFrame {
             pnlpemesananLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlpemesananLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pembtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -381,7 +381,7 @@ public class Utama extends javax.swing.JFrame {
         lbldesmaskapai.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lbldesmaskapai.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        jLabel14.setFont(new java.awt.Font("Freehand575 BT", 0, 30)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Freehand521 BT", 0, 24)); // NOI18N
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("Maskapai :");
 
@@ -394,7 +394,7 @@ public class Utama extends javax.swing.JFrame {
         jSeparator7.setBackground(new java.awt.Color(153, 204, 255));
         jSeparator7.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLabel15.setFont(new java.awt.Font("Freehand575 BT", 0, 36)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Freehand521 BT", 0, 24)); // NOI18N
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("LIST");
 
@@ -753,6 +753,11 @@ public class Utama extends javax.swing.JFrame {
 
         jcboxmaskapai.setFont(new java.awt.Font("Freehand521 BT", 0, 18)); // NOI18N
         jcboxmaskapai.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AirAsia Indonesia", "Garuda Indonesia", "Sriwijaya Air", "Batik Air", "Lion Air" }));
+        jcboxmaskapai.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcboxmaskapaiActionPerformed(evt);
+            }
+        });
 
         jSeparator6.setBackground(new java.awt.Color(153, 204, 255));
         jSeparator6.setForeground(new java.awt.Color(255, 255, 255));
@@ -931,6 +936,7 @@ public class Utama extends javax.swing.JFrame {
     private void fclassbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fclassbtnActionPerformed
         if(fclassbtn.isSelected()){
         eclassbtn.setSelected(false);
+        String class_ = "First Class";
         }
     }//GEN-LAST:event_fclassbtnActionPerformed
 
@@ -944,6 +950,7 @@ public class Utama extends javax.swing.JFrame {
     private void eclassbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eclassbtnActionPerformed
         if(eclassbtn.isSelected()){
         fclassbtn.setSelected(false);
+        String class_ = "Economy Class";
         }
     }//GEN-LAST:event_eclassbtnActionPerformed
 
@@ -976,15 +983,7 @@ public class Utama extends javax.swing.JFrame {
     }//GEN-LAST:event_malambtnActionPerformed
 
     private void tiketTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tiketTextActionPerformed
-        try{
-            int jumlahtiket = Integer.parseInt(tiketText.getText());
-        }
-        catch(ArithmeticException e){
-            JOptionPane.showMessageDialog(null, "Input hanya angka");
-            tiketText.setText("");
-        }
-        
-        
+        float jumlahtiket = Integer.parseInt(tiketText.getText());
     }//GEN-LAST:event_tiketTextActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -1008,7 +1007,6 @@ public class Utama extends javax.swing.JFrame {
         float harga = 0;
         float total = 0;
         float jumlahtiket = Float.parseFloat(tiketText.getText());
-        float diskon = 0;
         switch(jcbox_tujuan){
             case "Bali":
                 if(fclassbtn.isSelected()){
@@ -1967,6 +1965,10 @@ public class Utama extends javax.swing.JFrame {
     private void jcboxtujuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcboxtujuanActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jcboxtujuanActionPerformed
+
+    private void jcboxmaskapaiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcboxmaskapaiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jcboxmaskapaiActionPerformed
 
     /**
      * @param args the command line arguments

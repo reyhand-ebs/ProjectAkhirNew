@@ -5,6 +5,15 @@
  */
 package projectakhir;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.RandomAccessFile;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,17 +21,55 @@ import javax.swing.JOptionPane;
  * @author Hp
  */
 public class Result extends javax.swing.JFrame {
-
+    
+    File f = new File("C:\\Bookingan");
+    int ln;
     /**
      * Creates new form NewJFrame
      */
     public Result() {
         initComponents();
     }
-    public Result(int jumlahtiket) {
+    public Result(String jcboxtujuan, String jcboxmaskapai, String class_, Float jumlahtiket) {
         initComponents();
     }
+    void createFolder(){
+        if(!f.exists()){
+            f.mkdirs();
+        }
+    }
     
+    void readFile(){
+        try{
+            FileReader fr = new FileReader(f + "\\tiket.txt");
+            System.err.println("File Exists!");
+        }
+        catch(FileNotFoundException e){
+            try{
+                FileWriter fw = new FileWriter(f+"\\tiket.txt");
+                System.out.println("File created");
+            }
+            catch(IOException e1){
+                Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, e1);
+            }
+        }
+    }
+
+    void countLines(){
+        try {
+            ln=0;
+            RandomAccessFile raf = new RandomAccessFile(f+"\\tiket.txt", "rw");
+            for(int i=0;raf.readLine()!=null;i++){
+                ln++;
+            }
+            System.out.println("number of lines:"+ln);
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Register.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -56,39 +103,46 @@ public class Result extends javax.swing.JFrame {
         });
 
         jButton2.setFont(new java.awt.Font("Freehand521 BT", 0, 14)); // NOI18N
-        jButton2.setText("Convert to PDF");
+        jButton2.setText("Create .txt");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout kGradientPanel1Layout = new javax.swing.GroupLayout(kGradientPanel1);
         kGradientPanel1.setLayout(kGradientPanel1Layout);
         kGradientPanel1Layout.setHorizontalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, kGradientPanel1Layout.createSequentialGroup()
-                .addContainerGap(289, Short.MAX_VALUE)
-                .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(kGradientPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2))
-                    .addComponent(jLabel1))
-                .addGap(285, 285, 285))
+            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 2, Short.MAX_VALUE))
+            .addGroup(kGradientPanel1Layout.createSequentialGroup()
+                .addGap(89, 89, 89)
+                .addComponent(jButton1)
+                .addGap(44, 44, 44)
+                .addComponent(jButton2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         kGradientPanel1Layout.setVerticalGroup(
             kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(kGradientPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 439, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                 .addGroup(kGradientPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addGap(27, 27, 27))
+                    .addComponent(jButton2)
+                    .addComponent(jButton1))
+                .addGap(89, 89, 89))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(kGradientPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(kGradientPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 1, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,6 +177,27 @@ public class Result extends javax.swing.JFrame {
             this.setVisible(false);
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String jcbox_tujuan = (String) jcboxtujuan.getSelectedItem();
+        String jcbox_maskapai = (String) jcboxmaskapai.getSelectedItem();
+        String class_;
+        Float jumlahtiket = Float.parseFloat(tiketText.getText());
+        for(int v = 1; v <= jumlahtiket; v++){
+            try{		
+                PrintWriter fout = new PrintWriter("tiket.txt"); 
+                fout.println("Ini program Java untuk menulis File");
+                fout.close();
+            }
+            catch(FileNotFoundException e){
+                System.out.println("File tidak ditemukan");
+            }
+        }
+        
+        createFolder();
+        readFile();
+        countLines();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
