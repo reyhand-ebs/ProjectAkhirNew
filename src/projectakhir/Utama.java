@@ -478,12 +478,12 @@ public class Utama extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("TUJUAN:");
 
-        jLabel7.setFont(new java.awt.Font("Freehand575 BT", 0, 20)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Freehand521 BT", 0, 14)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("DKI Jakarta");
 
         fclassbtn.setBackground(new java.awt.Color(153, 204, 255));
-        fclassbtn.setFont(new java.awt.Font("Freehand575 BT", 0, 20)); // NOI18N
+        fclassbtn.setFont(new java.awt.Font("Freehand521 BT", 0, 14)); // NOI18N
         fclassbtn.setText("First Class");
         fclassbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -492,7 +492,7 @@ public class Utama extends javax.swing.JFrame {
         });
 
         eclassbtn.setBackground(new java.awt.Color(153, 204, 255));
-        eclassbtn.setFont(new java.awt.Font("Freehand575 BT", 0, 20)); // NOI18N
+        eclassbtn.setFont(new java.awt.Font("Freehand521 BT", 0, 14)); // NOI18N
         eclassbtn.setText("Economy Class");
         eclassbtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -512,7 +512,7 @@ public class Utama extends javax.swing.JFrame {
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("CLASS:");
 
-        jcboxtujuan.setFont(new java.awt.Font("Freehand575 BT", 0, 20)); // NOI18N
+        jcboxtujuan.setFont(new java.awt.Font("Freehand521 BT", 0, 14)); // NOI18N
         jcboxtujuan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bali", "Makassar", "Kalimantan", "Surabaya", "Sumatera" }));
         jcboxtujuan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -576,7 +576,7 @@ public class Utama extends javax.swing.JFrame {
                 .addGroup(jpanpem1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(fclassbtn)
                     .addComponent(eclassbtn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -596,7 +596,7 @@ public class Utama extends javax.swing.JFrame {
         jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
         pagibtn.setBackground(new java.awt.Color(153, 204, 255));
-        pagibtn.setFont(new java.awt.Font("Freehand575 BT", 0, 20)); // NOI18N
+        pagibtn.setFont(new java.awt.Font("Freehand521 BT", 0, 14)); // NOI18N
         pagibtn.setText("Pagi (07.30 WIB)");
         pagibtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         pagibtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -606,12 +606,12 @@ public class Utama extends javax.swing.JFrame {
             }
         });
 
-        jLabel10.setFont(new java.awt.Font("Freehand575 BT", 1, 24)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Freehand521 BT", 0, 14)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("WAKTU KEBERANGKATAN");
 
         siangbtn.setBackground(new java.awt.Color(153, 204, 255));
-        siangbtn.setFont(new java.awt.Font("Freehand575 BT", 0, 20)); // NOI18N
+        siangbtn.setFont(new java.awt.Font("Freehand521 BT", 0, 14)); // NOI18N
         siangbtn.setText("SIANG (13.25 WIB)");
         siangbtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         siangbtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -622,7 +622,7 @@ public class Utama extends javax.swing.JFrame {
         });
 
         malambtn.setBackground(new java.awt.Color(153, 204, 255));
-        malambtn.setFont(new java.awt.Font("Freehand575 BT", 0, 20)); // NOI18N
+        malambtn.setFont(new java.awt.Font("Freehand521 BT", 0, 14)); // NOI18N
         malambtn.setText("MALAM (21.40 WIB)");
         malambtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         malambtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -632,7 +632,7 @@ public class Utama extends javax.swing.JFrame {
             }
         });
 
-        jLabel11.setFont(new java.awt.Font("Freehand575 BT", 1, 24)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Freehand521 BT", 0, 14)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("JUMLAH TIKET");
 
@@ -701,14 +701,14 @@ public class Utama extends javax.swing.JFrame {
                 .addGroup(jpanpem2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpanpem2Layout.createSequentialGroup()
                         .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                         .addComponent(pagibtn)
                         .addGap(2, 2, 2)
                         .addGroup(jpanpem2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jpanpem2Layout.createSequentialGroup()
                                 .addGap(38, 38, 38)
                                 .addComponent(siangbtn)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                                 .addComponent(malambtn)
                                 .addGap(53, 53, 53)
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -740,7 +740,7 @@ public class Utama extends javax.swing.JFrame {
             }
         });
 
-        lblharga.setFont(new java.awt.Font("Freehand575 BT", 0, 40)); // NOI18N
+        lblharga.setFont(new java.awt.Font("Freehand521 BT", 0, 24)); // NOI18N
         lblharga.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblharga.setText("Rp.");
 
@@ -751,7 +751,7 @@ public class Utama extends javax.swing.JFrame {
             }
         });
 
-        jcboxmaskapai.setFont(new java.awt.Font("Freehand575 BT", 0, 24)); // NOI18N
+        jcboxmaskapai.setFont(new java.awt.Font("Freehand521 BT", 0, 18)); // NOI18N
         jcboxmaskapai.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AirAsia Indonesia", "Garuda Indonesia", "Sriwijaya Air", "Batik Air", "Lion Air" }));
 
         jSeparator6.setBackground(new java.awt.Color(153, 204, 255));
@@ -774,14 +774,14 @@ public class Utama extends javax.swing.JFrame {
             .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(lblharga, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanpem3Layout.createSequentialGroup()
-                .addContainerGap(192, Short.MAX_VALUE)
+                .addContainerGap(165, Short.MAX_VALUE)
                 .addGroup(jpanpem3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanpem3Layout.createSequentialGroup()
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(224, 224, 224))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanpem3Layout.createSequentialGroup()
                         .addComponent(jcboxmaskapai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(166, 166, 166))))
+                        .addGap(152, 152, 152))))
         );
         jpanpem3Layout.setVerticalGroup(
             jpanpem3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -789,13 +789,13 @@ public class Utama extends javax.swing.JFrame {
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43)
+                .addGap(41, 41, 41)
                 .addComponent(jcboxmaskapai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
+                .addGap(44, 44, 44)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(lblharga, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addGroup(jpanpem3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(nextButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -976,7 +976,14 @@ public class Utama extends javax.swing.JFrame {
     }//GEN-LAST:event_malambtnActionPerformed
 
     private void tiketTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tiketTextActionPerformed
-        int jumlahtiket = Integer.parseInt(tiketText.getText());
+        try{
+            int jumlahtiket = Integer.parseInt(tiketText.getText());
+        }
+        catch(ArithmeticException e){
+            JOptionPane.showMessageDialog(null, "Input hanya angka");
+            tiketText.setText("");
+        }
+        
         
     }//GEN-LAST:event_tiketTextActionPerformed
 
