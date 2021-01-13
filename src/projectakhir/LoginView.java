@@ -229,13 +229,13 @@ public class LoginView extends javax.swing.JFrame {
         String _password = new String (txtpassword.getPassword());
         
         if(username1.equalsIgnoreCase(_username) && password1.equals(_password)){
-            Utama U = new Utama();
+            Utama U = new Utama(_username);
             U.setLocationRelativeTo(null);
             U.setVisible(true);
             this.setVisible(false);
         }
         else if(username2.equalsIgnoreCase(_username) && password2.equals(_password)){
-            Utama U = new Utama();
+            Utama U = new Utama(_username);
             U.setLocationRelativeTo(null);
             U.setVisible(true);
             this.setVisible(false);
@@ -254,13 +254,13 @@ public class LoginView extends javax.swing.JFrame {
             String _password = new String (txtpassword.getPassword());
         
             if(username1.equalsIgnoreCase(_username) && password1.equals(_password)){
-                Utama U = new Utama();
+                Utama U = new Utama(_username);
                 U.setLocationRelativeTo(null);
                 U.setVisible(true);
                 this.setVisible(false);
             }
             else if(username2.equalsIgnoreCase(_username) && password2.equals(_password)){
-                Utama U = new Utama();
+                Utama U = new Utama(_username);
                 U.setLocationRelativeTo(null);
                 U.setVisible(true);
                 this.setVisible(false);
