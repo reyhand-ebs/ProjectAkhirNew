@@ -73,14 +73,12 @@ public class Utama extends javax.swing.JFrame {
         radbtnsriwijaya = new javax.swing.JRadioButton();
         radbtnbatik = new javax.swing.JRadioButton();
         radbtnairasia = new javax.swing.JRadioButton();
-        lbldesmaskapai = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        lbldismaskapai = new javax.swing.JLabel();
-        lbldismaskapai1 = new javax.swing.JLabel();
         jSeparator7 = new javax.swing.JSeparator();
         jLabel15 = new javax.swing.JLabel();
         jSeparator8 = new javax.swing.JSeparator();
         jLabel16 = new javax.swing.JLabel();
+        lbldesmaskapai = new javax.swing.JLabel();
         jpanpem1 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -220,7 +218,7 @@ public class Utama extends javax.swing.JFrame {
             pnlpemesananLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlpemesananLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pembtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -390,19 +388,9 @@ public class Utama extends javax.swing.JFrame {
             }
         });
 
-        lbldesmaskapai.setFont(new java.awt.Font("Monotype Corsiva", 2, 15)); // NOI18N
-        lbldesmaskapai.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbldesmaskapai.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-
         jLabel14.setFont(new java.awt.Font("Freehand521 BT", 0, 24)); // NOI18N
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel14.setText("Maskapai :");
-
-        lbldismaskapai.setFont(new java.awt.Font("Monotype Corsiva", 2, 15)); // NOI18N
-        lbldismaskapai.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-
-        lbldismaskapai1.setFont(new java.awt.Font("Monotype Corsiva", 2, 15)); // NOI18N
-        lbldismaskapai1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         jSeparator7.setBackground(new java.awt.Color(153, 204, 255));
         jSeparator7.setForeground(new java.awt.Color(255, 255, 255));
@@ -419,17 +407,26 @@ public class Utama extends javax.swing.JFrame {
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel16.setText("Hayand Airport");
 
+        lbldesmaskapai.setFont(new java.awt.Font("Monotype Corsiva", 2, 18)); // NOI18N
+        lbldesmaskapai.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
         javax.swing.GroupLayout jpanhomeLayout = new javax.swing.GroupLayout(jpanhome);
         jpanhome.setLayout(jpanhomeLayout);
         jpanhomeLayout.setHorizontalGroup(
             jpanhomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lbldesmaskapai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lbldismaskapai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lbldismaskapai1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel15, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jSeparator8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(jLabel16, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanhomeLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jpanhomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanhomeLayout.createSequentialGroup()
+                        .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(125, 125, 125))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanhomeLayout.createSequentialGroup()
+                        .addComponent(radbtnairasia)
+                        .addGap(170, 170, 170))))
             .addGroup(jpanhomeLayout.createSequentialGroup()
                 .addGap(6, 6, 6)
                 .addComponent(radbtnlion, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -440,15 +437,10 @@ public class Utama extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(radbtnsriwijaya, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanhomeLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jpanhomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanhomeLayout.createSequentialGroup()
-                        .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(125, 125, 125))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpanhomeLayout.createSequentialGroup()
-                        .addComponent(radbtnairasia)
-                        .addGap(170, 170, 170))))
+            .addGroup(jpanhomeLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lbldesmaskapai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jpanhomeLayout.setVerticalGroup(
             jpanhomeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -470,13 +462,9 @@ public class Utama extends javax.swing.JFrame {
                 .addComponent(radbtnairasia, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lbldesmaskapai, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lbldismaskapai, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(lbldismaskapai1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addGap(44, 44, 44)
+                .addComponent(lbldesmaskapai, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(91, Short.MAX_VALUE))
         );
 
         jpanutama.add(jpanhome, "card5");
@@ -1537,9 +1525,7 @@ public class Utama extends javax.swing.JFrame {
             radbtnsriwijaya.setSelected(false);
             radbtnbatik.setSelected(false);
             radbtnairasia.setSelected(false);
-            lbldesmaskapai.setText("Untuk harga maskapai Garuda Air: Rp. 700.000");
-            lbldismaskapai.setText("Diskon 2%");
-            lbldismaskapai1.setText("Jika pemesanan tiket kelipatan 3");
+            lbldesmaskapai.setText("Untuk harga maskapai Garuda Indonesia : Rp. 700.000");
         }
     }//GEN-LAST:event_radbtngarudaActionPerformed
 
@@ -1549,9 +1535,7 @@ public class Utama extends javax.swing.JFrame {
             radbtnsriwijaya.setSelected(false);
             radbtnbatik.setSelected(false);
             radbtnairasia.setSelected(false);
-            lbldesmaskapai.setText("Untuk harga maskapai Lion Air: Rp. 670.000");
-            lbldismaskapai.setText("Diskon 3%");
-            lbldismaskapai1.setText("Jika pemesanan tiket kelipatan 4");
+            lbldesmaskapai.setText("Untuk harga maskapai Lion Air : Rp. 670.000");
         }
     }//GEN-LAST:event_radbtnlionActionPerformed
 
@@ -1561,9 +1545,7 @@ public class Utama extends javax.swing.JFrame {
             radbtnlion.setSelected(false);
             radbtnbatik.setSelected(false);
             radbtnairasia.setSelected(false);
-            lbldesmaskapai.setText("Untuk harga maskapai Sriwijaya Air: Rp. 650.000");
-            lbldismaskapai.setText("Diskon 4%");
-            lbldismaskapai1.setText("Jika pemesanan tiket kelipatan 5");
+            lbldesmaskapai.setText("Untuk harga maskapai Sriwijaya Air : Rp. 650.000");
         }
     }//GEN-LAST:event_radbtnsriwijayaActionPerformed
 
@@ -1573,9 +1555,7 @@ public class Utama extends javax.swing.JFrame {
             radbtnlion.setSelected(false);
             radbtnsriwijaya.setSelected(false);
             radbtnairasia.setSelected(false);
-            lbldesmaskapai.setText("Untuk harga maskapai Batik Air: Rp. 600.000");
-            lbldismaskapai.setText("Diskon 3%");
-            lbldismaskapai1.setText("Jika pemesanan tiket kelipatan genap");
+            lbldesmaskapai.setText("Untuk harga maskapai Batik Air : Rp. 600.000");
         }
     }//GEN-LAST:event_radbtnbatikActionPerformed
 
@@ -1585,9 +1565,7 @@ public class Utama extends javax.swing.JFrame {
             radbtnlion.setSelected(false);
             radbtnsriwijaya.setSelected(false);
             radbtnbatik.setSelected(false);
-            lbldesmaskapai.setText("Untuk harga maskapai AirAsia Indonesia: Rp. 580.000");
-            lbldismaskapai.setText("Diskon 3%");
-            lbldismaskapai1.setText("Jika pemesanan tiket kelipatan ganjil");
+            lbldesmaskapai.setText("Untuk harga maskapai AirAsia Indonesia : Rp. 580.000");
         }
     }//GEN-LAST:event_radbtnairasiaActionPerformed
 
@@ -1779,8 +1757,6 @@ public class Utama extends javax.swing.JFrame {
     private javax.swing.JPanel jpanres;
     private javax.swing.JPanel jpanutama;
     private javax.swing.JLabel lbldesmaskapai;
-    private javax.swing.JLabel lbldismaskapai;
-    private javax.swing.JLabel lbldismaskapai1;
     private javax.swing.JLabel lblharga;
     private javax.swing.JLabel lbljudul;
     private javax.swing.JLabel lblwelcome;
