@@ -1,6 +1,14 @@
 package projectakhir;
 
 import javax.swing.JOptionPane;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -13,7 +21,9 @@ import javax.swing.JOptionPane;
  * @author ASUS
  */
 public class Utama extends javax.swing.JFrame {
-
+    
+    File f = new File("C:\\Booking");
+    int ln;
     /**
      * Creates new form NewJFrame
      */
@@ -102,6 +112,9 @@ public class Utama extends javax.swing.JFrame {
         jcboxmaskapai = new javax.swing.JComboBox<>();
         jSeparator6 = new javax.swing.JSeparator();
         jLabel13 = new javax.swing.JLabel();
+        jpanres = new javax.swing.JPanel();
+        jLabel17 = new javax.swing.JLabel();
+        jButton6 = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
 
         jLabel9.setText("jLabel9");
@@ -207,7 +220,7 @@ public class Utama extends javax.swing.JFrame {
             pnlpemesananLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlpemesananLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pembtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -808,6 +821,42 @@ public class Utama extends javax.swing.JFrame {
 
         jpanutama.add(jpanpem3, "card4");
 
+        jpanres.setBackground(new java.awt.Color(153, 204, 255));
+
+        jLabel17.setFont(new java.awt.Font("Freehand521 BT", 0, 36)); // NOI18N
+        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel17.setText("BOOKINGAN");
+
+        jButton6.setFont(new java.awt.Font("Freehand521 BT", 0, 24)); // NOI18N
+        jButton6.setText("Create .txt");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jpanresLayout = new javax.swing.GroupLayout(jpanres);
+        jpanres.setLayout(jpanresLayout);
+        jpanresLayout.setHorizontalGroup(
+            jpanresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jpanresLayout.createSequentialGroup()
+                .addGap(176, 176, 176)
+                .addComponent(jButton6)
+                .addContainerGap(184, Short.MAX_VALUE))
+        );
+        jpanresLayout.setVerticalGroup(
+            jpanresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpanresLayout.createSequentialGroup()
+                .addGap(86, 86, 86)
+                .addComponent(jLabel17)
+                .addGap(77, 77, 77)
+                .addComponent(jButton6)
+                .addContainerGap(129, Short.MAX_VALUE))
+        );
+
+        jpanutama.add(jpanres, "card6");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -936,7 +985,6 @@ public class Utama extends javax.swing.JFrame {
     private void fclassbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fclassbtnActionPerformed
         if(fclassbtn.isSelected()){
         eclassbtn.setSelected(false);
-        String class_ = "First Class";
         }
     }//GEN-LAST:event_fclassbtnActionPerformed
 
@@ -950,7 +998,6 @@ public class Utama extends javax.swing.JFrame {
     private void eclassbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eclassbtnActionPerformed
         if(eclassbtn.isSelected()){
         fclassbtn.setSelected(false);
-        String class_ = "Economy Class";
         }
     }//GEN-LAST:event_eclassbtnActionPerformed
 
@@ -994,10 +1041,10 @@ public class Utama extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void nextButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextButton1ActionPerformed
-        Result Res = new Result();
-        this.setVisible(false);
-        Res.setVisible(true);
-        Res.setLocationRelativeTo(null);
+        jpanutama.removeAll();
+        jpanutama.add(jpanres);
+        jpanutama.revalidate();
+        jpanutama.repaint();
     }//GEN-LAST:event_nextButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -1011,173 +1058,89 @@ public class Utama extends javax.swing.JFrame {
             case "Bali":
                 if(fclassbtn.isSelected()){
                     if(pagibtn.isSelected() || siangbtn.isSelected()){
-                        if(jcbox_maskapai == "AirAsia Indonesia"){
-                            if(jumlahtiket %2 == 1){
-                                harga = 3/100 * 702000;
-                            }
-                            else{
+                        switch (jcbox_maskapai) {
+                            case "AirAsia Indonesia":
                                 harga = 702000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Garuda Indonesia"){
-                            if(jumlahtiket %3 == 0){
-                                harga = 2/100 * 822000;
-                            }
-                            else{
+                                break;
+                            case "Garuda Indonesia":
                                 harga = 822000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Sriwijaya Air"){
-                            if(jumlahtiket %5 == 0){
-                                harga = 4/100 * 772000;
-                            }
-                            else{
+                                break;
+                            case "Sriwijaya Air":
                                 harga = 772000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Batik Air"){
-                            if(jumlahtiket %2 == 0){
-                                harga = 3/100 * 722000;
-                            }
-                            else{
+                                break;
+                            case "Batik Air":
                                 harga = 722000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Lion Air"){
-                            if(jumlahtiket %4 == 0){
-                                harga = 3/100 * 892000;
-                            }
-                            else{
+                                break;
+                            case "Lion Air":
                                 harga = 892000;
-                            }
+                                break;
+                            default:
+                                break;
                         }
                     }
                     if(malambtn.isSelected()){
-                        if(jcbox_maskapai == "AirAsia Indonesia"){
-                            if(jumlahtiket %2 == 1){
-                                harga = 3/100 * 712000;
-                            }
-                            else{
+                        switch (jcbox_maskapai) {
+                            case "AirAsia Indonesia":
                                 harga = 712000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Garuda Indonesia"){
-                            if(jumlahtiket %3 == 0){
-                                harga = 2/100 * 832000;
-                            }
-                            else{
+                                break;
+                            case "Garuda Indonesia":
                                 harga = 832000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Sriwijaya Air"){
-                            if(jumlahtiket %5 == 0){
-                                harga = 4/100 * 782000;
-                            }
-                            else{
+                                break;
+                            case "Sriwijaya Air":
                                 harga = 782000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Batik Air"){
-                            if(jumlahtiket %2 == 0){
-                                harga = 3/100 * 732000;
-                            }
-                            else{
+                                break;
+                            case "Batik Air":
                                 harga = 732000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Lion Air"){
-                            if(jumlahtiket %4 == 0){
-                                harga = 3/100 * 902000;
-                            }
-                            else{
+                                break;
+                            case "Lion Air":
                                 harga = 902000;
-                            }
+                                break;
+                            default:
+                                break;
                         }
                     }
                 }
                 else if(eclassbtn.isSelected()){
                     if(pagibtn.isSelected() || siangbtn.isSelected()){
-                        if(jcbox_maskapai == "AirAsia Indonesia"){
-                            if(jumlahtiket %2 == 1){
-                                harga = 3/100 * 682000;
-                            }
-                            else{
+                        switch (jcbox_maskapai) {
+                            case "AirAsia Indonesia":
                                 harga = 682000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Garuda Indonesia"){
-                            if(jumlahtiket %3 == 0){
-                                harga = 2/100 * 802000;
-                            }
-                            else{
+                                break;
+                            case "Garuda Indonesia":
                                 harga = 802000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Sriwijaya Air"){
-                            if(jumlahtiket %5 == 0){
-                                harga = 4/100 * 752000;
-                            }
-                            else{
+                                break;
+                            case "Sriwijaya Air":
                                 harga = 752000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Batik Air"){
-                            if(jumlahtiket %2 == 0){
-                                harga = 3/100 * 702000;
-                            }
-                            else{
+                                break;
+                            case "Batik Air":
                                 harga = 702000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Lion Air"){
-                            if(jumlahtiket %4 == 0){
-                                harga = 3/100 * 872000;
-                            }
-                            else{
+                                break;
+                            case "Lion Air":
                                 harga = 872000;
-                            }
+                                break;
+                            default:
+                                break;
                         }
                     }
                     if(malambtn.isSelected()){
-                        if(jcbox_maskapai == "AirAsia Indonesia"){
-                            if(jumlahtiket %2 == 1){
-                                harga = 3/100 * 692000;
-                            }
-                            else{
+                        switch (jcbox_maskapai) {
+                            case "AirAsia Indonesia":
                                 harga = 692000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Garuda Indonesia"){
-                            if(jumlahtiket %3 == 0){
-                                harga = 2/100 * 812000;
-                            }
-                            else{
+                                break;
+                            case "Garuda Indonesia":
                                 harga = 812000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Sriwijaya Air"){
-                            if(jumlahtiket %5 == 0){
-                                harga = 4/100 * 762000;
-                            }
-                            else{
+                                break;
+                            case "Sriwijaya Air":
                                 harga = 762000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Batik Air"){
-                            if(jumlahtiket %2 == 0){
-                                harga = 3/100 * 712000;
-                            }
-                            else{
+                                break;
+                            case "Batik Air":
                                 harga = 712000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Lion Air"){
-                            if(jumlahtiket %4 == 0){
-                                harga = 3/100 * 882000;
-                            }
-                            else{
+                                break;
+                            case "Lion Air":
                                 harga = 882000;
-                            }
+                                break;
+                            default:
+                                break;
                         }
                     }
                 }
@@ -1188,173 +1151,89 @@ public class Utama extends javax.swing.JFrame {
             case "Makassar":
                 if(fclassbtn.isSelected()){
                     if(pagibtn.isSelected() || siangbtn.isSelected()){
-                        if(jcbox_maskapai == "AirAsia Indonesia"){
-                            if(jumlahtiket %2 == 1){
-                                harga = 3/100 * 731000;
-                            }
-                            else{
+                        switch (jcbox_maskapai) {
+                            case "AirAsia Indonesia":
                                 harga = 731000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Garuda Indonesia"){
-                            if(jumlahtiket %3 == 0){
-                                harga = 2/100 * 851000;
-                            }
-                            else{
+                                break;
+                            case "Garuda Indonesia":
                                 harga = 851000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Sriwijaya Air"){
-                            if(jumlahtiket %5 == 0){
-                                harga = 4/100 * 801000;
-                            }
-                            else{
+                                break;
+                            case "Sriwijaya Air":
                                 harga = 801000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Batik Air"){
-                            if(jumlahtiket %2 == 0){
-                                harga = 3/100 * 751000;
-                            }
-                            else{
+                                break;
+                            case "Batik Air":
                                 harga = 751000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Lion Air"){
-                            if(jumlahtiket %4 == 0){
-                                harga = 3/100 * 921000;
-                            }
-                            else{
+                                break;
+                            case "Lion Air":
                                 harga = 921000;
-                            }
+                                break;
+                            default:
+                                break;
                         }
                     }
                     if(malambtn.isSelected()){
-                        if(jcbox_maskapai == "AirAsia Indonesia"){
-                            if(jumlahtiket %2 == 1){
-                                harga = 3/100 * 921000;
-                            }
-                            else{
+                        switch (jcbox_maskapai) {
+                            case "AirAsia Indonesia":
                                 harga = 921000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Garuda Indonesia"){
-                            if(jumlahtiket %3 == 0){
-                                harga = 2/100 * 832000;
-                            }
-                            else{
+                                break;
+                            case "Garuda Indonesia":
                                 harga = 832000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Sriwijaya Air"){
-                            if(jumlahtiket %5 == 0){
-                                harga = 4/100 * 782000;
-                            }
-                            else{
+                                break;
+                            case "Sriwijaya Air":
                                 harga = 782000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Batik Air"){
-                            if(jumlahtiket %2 == 0){
-                                harga = 3/100 * 732000;
-                            }
-                            else{
+                                break;
+                            case "Batik Air":
                                 harga = 732000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Lion Air"){
-                            if(jumlahtiket %4 == 0){
-                                harga = 3/100 * 902000;
-                            }
-                            else{
+                                break;
+                            case "Lion Air":
                                 harga = 902000;
-                            }
+                                break;
+                            default:
+                                break;
                         }
                     }
                 }
                 else if(eclassbtn.isSelected()){
                     if(pagibtn.isSelected() || siangbtn.isSelected()){
-                        if(jcbox_maskapai == "AirAsia Indonesia"){
-                            if(jumlahtiket %2 == 1){
-                                harga = 3/100 * 711000;
-                            }
-                            else{
+                        switch (jcbox_maskapai) {
+                            case "AirAsia Indonesia":
                                 harga = 711000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Garuda Indonesia"){
-                            if(jumlahtiket %3 == 0){
-                                harga = 2/100 * 831000;
-                            }
-                            else{
+                                break;
+                            case "Garuda Indonesia":
                                 harga = 831000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Sriwijaya Air"){
-                            if(jumlahtiket %5 == 0){
-                                harga = 4/100 * 781000;
-                            }
-                            else{
+                                break;
+                            case "Sriwijaya Air":
                                 harga = 781000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Batik Air"){
-                            if(jumlahtiket %2 == 0){
-                                harga = 3/100 * 731000;
-                            }
-                            else{
+                                break;
+                            case "Batik Air":
                                 harga = 731000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Lion Air"){
-                            if(jumlahtiket %4 == 0){
-                                harga = 3/100 * 901000;
-                            }
-                            else{
+                                break;
+                            case "Lion Air":
                                 harga = 901000;
-                            }
+                                break;
+                            default:
+                                break;
                         }
                     }
                     if(malambtn.isSelected()){
-                        if(jcbox_maskapai == "AirAsia Indonesia"){
-                            if(jumlahtiket %2 == 1){
-                                harga = 3/100 * 721000;
-                            }
-                            else{
+                        switch (jcbox_maskapai) {
+                            case "AirAsia Indonesia":
                                 harga = 721000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Garuda Indonesia"){
-                            if(jumlahtiket %3 == 0){
-                                harga = 2/100 * 841000;
-                            }
-                            else{
+                                break;
+                            case "Garuda Indonesia":
                                 harga = 841000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Sriwijaya Air"){
-                            if(jumlahtiket %5 == 0){
-                                harga = 4/100 * 791000;
-                            }
-                            else{
+                                break;
+                            case "Sriwijaya Air":
                                 harga = 791000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Batik Air"){
-                            if(jumlahtiket %2 == 0){
-                                harga = 3/100 * 741000;
-                            }
-                            else{
+                                break;
+                            case "Batik Air":
                                 harga = 741000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Lion Air"){
-                            if(jumlahtiket %4 == 0){
-                                harga = 3/100 * 911000;
-                            }
-                            else{
+                                break;
+                            case "Lion Air":
                                 harga = 911000;
-                            }
+                                break;
+                            default:
+                                break;
                         }
                     }
                 }
@@ -1365,173 +1244,89 @@ public class Utama extends javax.swing.JFrame {
             case "Kalimantan":
                 if(fclassbtn.isSelected()){
                     if(pagibtn.isSelected() || siangbtn.isSelected()){
-                        if(jcbox_maskapai == "AirAsia Indonesia"){
-                            if(jumlahtiket %2 == 1){
-                                harga = 3/100 * 765000;
-                            }
-                            else{
+                        switch (jcbox_maskapai) {
+                            case "AirAsia Indonesia":
                                 harga = 765000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Garuda Indonesia"){
-                            if(jumlahtiket %3 == 0){
-                                harga = 2/100 * 885000;
-                            }
-                            else{
+                                break;
+                            case "Garuda Indonesia":
                                 harga = 885000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Sriwijaya Air"){
-                            if(jumlahtiket %5 == 0){
-                                harga = 4/100 * 835000;
-                            }
-                            else{
+                                break;
+                            case "Sriwijaya Air":
                                 harga = 835000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Batik Air"){
-                            if(jumlahtiket %2 == 0){
-                                harga = 3/100 * 785000;
-                            }
-                            else{
+                                break;
+                            case "Batik Air":
                                 harga = 785000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Lion Air"){
-                            if(jumlahtiket %4 == 0){
-                                harga = 3/100 * 855000;
-                            }
-                            else{
+                                break;
+                            case "Lion Air":
                                 harga = 855000;
-                            }
+                                break;
+                            default:
+                                break;
                         }
                     }
                     if(malambtn.isSelected()){
-                        if(jcbox_maskapai == "AirAsia Indonesia"){
-                            if(jumlahtiket %2 == 1){
-                                harga = 3/100 * 775000;
-                            }
-                            else{
+                        switch (jcbox_maskapai) {
+                            case "AirAsia Indonesia":
                                 harga = 775000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Garuda Indonesia"){
-                            if(jumlahtiket %3 == 0){
-                                harga = 2/100 * 895000;
-                            }
-                            else{
+                                break;
+                            case "Garuda Indonesia":
                                 harga = 895000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Sriwijaya Air"){
-                            if(jumlahtiket %5 == 0){
-                                harga = 4/100 * 845000;
-                            }
-                            else{
+                                break;
+                            case "Sriwijaya Air":
                                 harga = 845000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Batik Air"){
-                            if(jumlahtiket %2 == 0){
-                                harga = 3/100 * 795000;
-                            }
-                            else{
+                                break;
+                            case "Batik Air":
                                 harga = 795000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Lion Air"){
-                            if(jumlahtiket %4 == 0){
-                                harga = 3/100 * 865000;
-                            }
-                            else{
+                                break;
+                            case "Lion Air":
                                 harga = 865000;
-                            }
+                                break;
+                            default:
+                                break;
                         }
                     }
                 }
                 else if(eclassbtn.isSelected()){
                     if(pagibtn.isSelected() || siangbtn.isSelected()){
-                        if(jcbox_maskapai == "AirAsia Indonesia"){
-                            if(jumlahtiket %2 == 1){
-                                harga = 3/100 * 745000;
-                            }
-                            else{
+                        switch (jcbox_maskapai) {
+                            case "AirAsia Indonesia":
                                 harga = 745000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Garuda Indonesia"){
-                            if(jumlahtiket %3 == 0){
-                                harga = 2/100 * 865000;
-                            }
-                            else{
+                                break;
+                            case "Garuda Indonesia":
                                 harga = 865000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Sriwijaya Air"){
-                            if(jumlahtiket %5 == 0){
-                                harga = 4/100 * 815000;
-                            }
-                            else{
+                                break;
+                            case "Sriwijaya Air":
                                 harga = 815000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Batik Air"){
-                            if(jumlahtiket %2 == 0){
-                                harga = 3/100 * 765000;
-                            }
-                            else{
+                                break;
+                            case "Batik Air":
                                 harga = 765000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Lion Air"){
-                            if(jumlahtiket %4 == 0){
-                                harga = 3/100 * 835000;
-                            }
-                            else{
+                                break;
+                            case "Lion Air":
                                 harga = 835000;
-                            }
+                                break;
+                            default:
+                                break;
                         }
                     }
                     if(malambtn.isSelected()){
-                        if(jcbox_maskapai == "AirAsia Indonesia"){
-                            if(jumlahtiket %2 == 1){
-                                harga = 3/100 * 755000;
-                            }
-                            else{
+                        switch (jcbox_maskapai) {
+                            case "AirAsia Indonesia":
                                 harga = 755000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Garuda Indonesia"){
-                            if(jumlahtiket %3 == 0){
-                                harga = 2/100 * 875000;
-                            }
-                            else{
+                                break;
+                            case "Garuda Indonesia":
                                 harga = 875000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Sriwijaya Air"){
-                            if(jumlahtiket %5 == 0){
-                                harga = 4/100 * 825000;
-                            }
-                            else{
+                                break;
+                            case "Sriwijaya Air":
                                 harga = 825000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Batik Air"){
-                            if(jumlahtiket %2 == 0){
-                                harga = 3/100 * 775000;
-                            }
-                            else{
+                                break;
+                            case "Batik Air":
                                 harga = 775000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Lion Air"){
-                            if(jumlahtiket %4 == 0){
-                                harga = 3/100 * 845000;
-                            }
-                            else{
+                                break;
+                            case "Lion Air":
                                 harga = 845000;
-                            }
+                                break;
+                            default:
+                                break;
                         }
                     }
                 }
@@ -1542,173 +1337,89 @@ public class Utama extends javax.swing.JFrame {
             case "Surabaya":
                 if(fclassbtn.isSelected()){
                     if(pagibtn.isSelected() || siangbtn.isSelected()){
-                        if(jcbox_maskapai == "AirAsia Indonesia"){
-                            if(jumlahtiket %2 == 1){
-                                harga = 3/100 * 673000;
-                            }
-                            else{
+                        switch (jcbox_maskapai) {
+                            case "AirAsia Indonesia":
                                 harga = 673000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Garuda Indonesia"){
-                            if(jumlahtiket %3 == 0){
-                                harga = 2/100 * 793000;
-                            }
-                            else{
+                                break;
+                            case "Garuda Indonesia":
                                 harga = 793000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Sriwijaya Air"){
-                            if(jumlahtiket %5 == 0){
-                                harga = 4/100 * 743000;
-                            }
-                            else{
+                                break;
+                            case "Sriwijaya Air":
                                 harga = 743000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Batik Air"){
-                            if(jumlahtiket %2 == 0){
-                                harga = 3/100 * 693000;
-                            }
-                            else{
+                                break;
+                            case "Batik Air":
                                 harga = 693000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Lion Air"){
-                            if(jumlahtiket %4 == 0){
-                                harga = 3/100 * 763000;
-                            }
-                            else{
+                                break;
+                            case "Lion Air":
                                 harga = 763000;
-                            }
+                                break;
+                            default:
+                                break;
                         }
                     }
                     if(malambtn.isSelected()){
-                        if(jcbox_maskapai == "AirAsia Indonesia"){
-                            if(jumlahtiket %2 == 1){
-                                harga = 3/100 * 683000;
-                            }
-                            else{
+                        switch (jcbox_maskapai) {
+                            case "AirAsia Indonesia":
                                 harga = 683000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Garuda Indonesia"){
-                            if(jumlahtiket %3 == 0){
-                                harga = 2/100 * 803000;
-                            }
-                            else{
+                                break;
+                            case "Garuda Indonesia":
                                 harga = 803000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Sriwijaya Air"){
-                            if(jumlahtiket %5 == 0){
-                                harga = 4/100 * 753000;
-                            }
-                            else{
+                                break;
+                            case "Sriwijaya Air":
                                 harga = 753000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Batik Air"){
-                            if(jumlahtiket %2 == 0){
-                                harga = 3/100 * 703000;
-                            }
-                            else{
+                                break;
+                            case "Batik Air":
                                 harga = 703000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Lion Air"){
-                            if(jumlahtiket %4 == 0){
-                                harga = 3/100 * 773000;
-                            }
-                            else{
+                                break;
+                            case "Lion Air":
                                 harga = 773000;
-                            }
+                                break;
+                            default:
+                                break;
                         }
                     }
                 }
                 else if(eclassbtn.isSelected()){
                     if(pagibtn.isSelected() || siangbtn.isSelected()){
-                        if(jcbox_maskapai == "AirAsia Indonesia"){
-                            if(jumlahtiket %2 == 1){
-                                harga = 3/100 * 653000;
-                            }
-                            else{
+                        switch (jcbox_maskapai) {
+                            case "AirAsia Indonesia":
                                 harga = 653000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Garuda Indonesia"){
-                            if(jumlahtiket %3 == 0){
-                                harga = 2/100 * 773000;
-                            }
-                            else{
+                                break;
+                            case "Garuda Indonesia":
                                 harga = 773000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Sriwijaya Air"){
-                            if(jumlahtiket %5 == 0){
-                                harga = 4/100 * 723000;
-                            }
-                            else{
+                                break;
+                            case "Sriwijaya Air":
                                 harga = 723000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Batik Air"){
-                            if(jumlahtiket %2 == 0){
-                                harga = 3/100 * 673000;
-                            }
-                            else{
+                                break;
+                            case "Batik Air":
                                 harga = 673000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Lion Air"){
-                            if(jumlahtiket %4 == 0){
-                                harga = 3/100 * 743000;
-                            }
-                            else{
+                                break;
+                            case "Lion Air":
                                 harga = 743000;
-                            }
+                                break;
+                            default:
+                                break;
                         }
                     }
                     if(malambtn.isSelected()){
-                        if(jcbox_maskapai == "AirAsia Indonesia"){
-                            if(jumlahtiket %2 == 1){
-                                harga = 3/100 * 663000;
-                            }
-                            else{
+                        switch (jcbox_maskapai) {
+                            case "AirAsia Indonesia":
                                 harga = 663000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Garuda Indonesia"){
-                            if(jumlahtiket %3 == 0){
-                                harga = 2/100 * 783000;
-                            }
-                            else{
+                                break;
+                            case "Garuda Indonesia":
                                 harga = 783000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Sriwijaya Air"){
-                            if(jumlahtiket %5 == 0){
-                                harga = 4/100 * 733000;
-                            }
-                            else{
+                                break;
+                            case "Sriwijaya Air":
                                 harga = 733000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Batik Air"){
-                            if(jumlahtiket %2 == 0){
-                                harga = 3/100 * 683000;
-                            }
-                            else{
+                                break;
+                            case "Batik Air":
                                 harga = 683000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Lion Air"){
-                            if(jumlahtiket %4 == 0){
-                                harga = 3/100 * 753000;
-                            }
-                            else{
+                                break;
+                            case "Lion Air":
                                 harga = 753000;
-                            }
+                                break;
+                            default:
+                                break;
                         }
                     }
                 }
@@ -1716,182 +1427,100 @@ public class Utama extends javax.swing.JFrame {
                 total_ = Float.toString(total);
                 lblharga.setText("Rp. " + total_);
                 break;
-            default:
+            case "Sumatera":
                 if(fclassbtn.isSelected()){
                     if(pagibtn.isSelected() || siangbtn.isSelected()){
-                        if(jcbox_maskapai == "AirAsia Indonesia"){
-                            if(jumlahtiket %2 == 1){
-                                harga = 3/100 * 753000;
-                            }
-                            else{
+                        switch (jcbox_maskapai) {
+                            case "AirAsia Indonesia":
                                 harga = 753000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Garuda Indonesia"){
-                            if(jumlahtiket %3 == 0){
-                                harga = 2/100 * 873000;
-                            }
-                            else{
+                                break;
+                            case "Garuda Indonesia":
                                 harga = 873000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Sriwijaya Air"){
-                            if(jumlahtiket %5 == 0){
-                                harga = 4/100 * 823000;
-                            }
-                            else{
+                                break;
+                            case "Sriwijaya Air":
                                 harga = 823000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Batik Air"){
-                            if(jumlahtiket %2 == 0){
-                                harga = 3/100 * 773000;
-                            }
-                            else{
+                                break;
+                            case "Batik Air":
                                 harga = 773000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Lion Air"){
-                            if(jumlahtiket %4 == 0){
-                                harga = 3/100 * 843000;
-                            }
-                            else{
+                                break;
+                            case "Lion Air":
                                 harga = 843000;
-                            }
+                                break;
+                            default:
+                                break;
                         }
                     }
                     if(malambtn.isSelected()){
-                        if(jcbox_maskapai == "AirAsia Indonesia"){
-                            if(jumlahtiket %2 == 1){
-                                harga = 3/100 * 763000;
-                            }
-                            else{
+                        switch (jcbox_maskapai) {
+                            case "AirAsia Indonesia":
                                 harga = 763000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Garuda Indonesia"){
-                            if(jumlahtiket %3 == 0){
-                                harga = 2/100 * 883000;
-                            }
-                            else{
+                                break;
+                            case "Garuda Indonesia":
                                 harga = 883000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Sriwijaya Air"){
-                            if(jumlahtiket %5 == 0){
-                                harga = 4/100 * 833000;
-                            }
-                            else{
+                                break;
+                            case "Sriwijaya Air":
                                 harga = 833000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Batik Air"){
-                            if(jumlahtiket %2 == 0){
-                                harga = 3/100 * 783000;
-                            }
-                            else{
+                                break;
+                            case "Batik Air":
                                 harga = 783000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Lion Air"){
-                            if(jumlahtiket %4 == 0){
-                                harga = 3/100 * 853000;
-                            }
-                            else{
+                                break;
+                            case "Lion Air":
                                 harga = 853000;
-                            }
+                                break;
+                            default:
+                                break;
                         }
                     }
                 }
                 else if(eclassbtn.isSelected()){
                     if(pagibtn.isSelected() || siangbtn.isSelected()){
-                        if(jcbox_maskapai == "AirAsia Indonesia"){
-                            if(jumlahtiket %2 == 1){
-                                harga = 3/100 * 733000;
-                            }
-                            else{
+                        switch (jcbox_maskapai) {
+                            case "AirAsia Indonesia":
                                 harga = 733000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Garuda Indonesia"){
-                            if(jumlahtiket %3 == 0){
-                                harga = 2/100 * 853000;
-                            }
-                            else{
+                                break;
+                            case "Garuda Indonesia":
                                 harga = 853000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Sriwijaya Air"){
-                            if(jumlahtiket %5 == 0){
-                                harga = 4/100 * 803000;
-                            }
-                            else{
+                                break;
+                            case "Sriwijaya Air":
                                 harga = 803000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Batik Air"){
-                            if(jumlahtiket %2 == 0){
-                                harga = 3/100 * 753000;
-                            }
-                            else{
+                                break;
+                            case "Batik Air":
                                 harga = 753000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Lion Air"){
-                            if(jumlahtiket %4 == 0){
-                                harga = 3/100 * 823000;
-                            }
-                            else{
+                                break;
+                            case "Lion Air":
                                 harga = 823000;
-                            }
+                                break;
+                            default:
+                                break;
                         }
                     }
                     if(malambtn.isSelected()){
-                        if(jcbox_maskapai == "AirAsia Indonesia"){
-                            if(jumlahtiket %2 == 1){
-                                harga = 3/100 * 743000;
-                            }
-                            else{
+                        switch (jcbox_maskapai) {
+                            case "AirAsia Indonesia":
                                 harga = 743000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Garuda Indonesia"){
-                            if(jumlahtiket %3 == 0){
-                                harga = 2/100 * 863000;
-                            }
-                            else{
+                                break;
+                            case "Garuda Indonesia":
                                 harga = 863000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Sriwijaya Air"){
-                            if(jumlahtiket %5 == 0){
-                                harga = 4/100 * 813000;
-                            }
-                            else{
+                                break;
+                            case "Sriwijaya Air":
                                 harga = 813000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Batik Air"){
-                            if(jumlahtiket %2 == 0){
-                                harga = 3/100 * 763000;
-                            }
-                            else{
+                                break;
+                            case "Batik Air":
                                 harga = 763000;
-                            }
-                        }
-                        else if(jcbox_maskapai == "Lion Air"){
-                            if(jumlahtiket %4 == 0){
-                                harga = 3/100 * 833000;
-                            }
-                            else{
+                                break;
+                            case "Lion Air":
                                 harga = 833000;
-                            }
+                                break;
+                            default:
+                                break;
                         }
                     }
                 }
                 total = jumlahtiket * harga;
                 total_ = Float.toString(total);
                 lblharga.setText("Rp. " + total_);
+            default:
+                break;
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -1970,6 +1599,84 @@ public class Utama extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jcboxmaskapaiActionPerformed
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        String jcbox_tujuan = (String) jcboxtujuan.getSelectedItem();
+        String jcbox_maskapai = (String) jcboxmaskapai.getSelectedItem();
+        Float jumlahtiket = Float.parseFloat(tiketText.getText());
+        String class_ = null;
+        String jam = null;
+        if(!f.exists()){
+            f.mkdirs();
+        }
+        try {
+            RandomAccessFile raf = new RandomAccessFile(f+"\\Booking.txt", "rw");
+            FileReader fr = new FileReader(f+"\\Booking.txt");
+            System.out.println("file exists!");
+            for(int i=0;i<ln;i++){
+                raf.readLine();
+            }
+            //if condition added after video to have no lines on first entry
+            if(ln>0){
+            raf.writeBytes("\r\n");
+            raf.writeBytes("\r\n");
+            }
+            if(fclassbtn.isSelected()){
+                if(pagibtn.isSelected()){
+                    class_ = "First Class";
+                    jam = "Pagi(07.30 WIB)";
+                }
+                else if(siangbtn.isSelected()){
+                    class_ = "First Class";
+                    jam = "Siang(13.25 WIB)";
+                }
+                else if(malambtn.isSelected()){
+                    class_ = "First Class";
+                    jam = "Malam(21.40 WIB)";
+                }
+            }
+            else if(eclassbtn.isSelected()){
+                if(pagibtn.isSelected()){
+                    class_ = "First Class";
+                    jam = "Pagi(07.30 WIB)";
+                }
+                else if(siangbtn.isSelected()){
+                    class_ = "First Class";
+                    jam = "Siang(13.25 WIB)";
+                }
+                else if(malambtn.isSelected()){
+                    class_ = "First Class";
+                    jam = "Malam(21.40 WIB)";
+                }
+            }
+            for(int i=0;i<ln;i++){
+                raf.readLine();
+            }
+            for(int h = 1; h <= jumlahtiket; h++){
+                raf.writeBytes("--------------------------------------------------"+ "\r\n");
+                raf.writeBytes(class_ +"\r\n");
+                raf.writeBytes("Tujuan: "+ jcbox_tujuan+ "\r\n");    
+                raf.writeBytes("Waktu Keberangkatan : "+ jam +"\r\n");
+                raf.writeBytes("Maskapai: "+ jcbox_maskapai +"\r\n");
+                raf.writeBytes("Kode Bangku: "+ "#KBHDAT-"+ h +"\r\n");
+            }
+            raf.writeBytes("--------------------------------------------------"+ "\r\n");
+        } catch (FileNotFoundException ex) {
+            try {
+                FileWriter fw = new FileWriter(f+"\\logins.txt");
+                System.out.println("File created");
+            } catch (IOException ex1) {
+                Logger.getLogger(Utama.class.getName()).log(Level.SEVERE, null, ex1);
+            }
+        } catch (IOException ex) {
+            Logger.getLogger(Utama.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        JOptionPane.showMessageDialog(null, "Tiket sudah terbuat!");
+        LoginView LV = new LoginView();
+        LV.setVisible(true);
+        LV.setLocationRelativeTo(null);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -2031,6 +1738,7 @@ public class Utama extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2039,6 +1747,7 @@ public class Utama extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -2067,6 +1776,7 @@ public class Utama extends javax.swing.JFrame {
     private javax.swing.JPanel jpanpem1;
     private javax.swing.JPanel jpanpem2;
     private javax.swing.JPanel jpanpem3;
+    private javax.swing.JPanel jpanres;
     private javax.swing.JPanel jpanutama;
     private javax.swing.JLabel lbldesmaskapai;
     private javax.swing.JLabel lbldismaskapai;

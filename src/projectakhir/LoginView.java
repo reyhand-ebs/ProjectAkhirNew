@@ -216,7 +216,7 @@ public class LoginView extends javax.swing.JFrame {
         int input = JOptionPane.showConfirmDialog(null, "Apakah kamu yakin ingin keluar?", "Konfirmasi", JOptionPane.YES_NO_OPTION);
         //0 = yes, 1 = no, 2 = cancel
         if(input == 0){
-            this.setVisible(false);
+            System.exit(0);
         }
     }//GEN-LAST:event_btnexitActionPerformed
 
